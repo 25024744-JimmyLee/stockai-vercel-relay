@@ -184,3 +184,6 @@ npx vercel --prod
 
 Production deployment remains a separate authorised operation; the repository
 does not contain deployment credentials.
+
+
+Vercel source repository: this project deploys the relay; market snapshots are published to stockai-market-snapshot.
