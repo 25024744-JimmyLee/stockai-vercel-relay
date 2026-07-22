@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "regions": ["sin1"],
+  "functions": {
+    "api/query-parse.js": {
+      "maxDuration": 30
+    },
+    "api/gemini-stock-insight.js": {
+      "maxDuration": 30
+    },
+    "api/account-sync.js": {
+      "maxDuration": 10
+    },
+    "api/market-data-refresh.js": {
+      "maxDuration": 120
+    },
+    "api/cron/market-data-refresh.js": {
+      "maxDuration": 120
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/market-data-refresh",
+      "schedule": "0 16 * * *"
+    }
+  ]
+}

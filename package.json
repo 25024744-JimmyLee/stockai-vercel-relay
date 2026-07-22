@@ -1,0 +1,19 @@
+{
+  "name": "stockai-gemini-relay",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx vercel dev",
+    "deploy": "npx vercel --prod",
+    "check": "node --check lib/relay-http.js && node --check lib/relay-security.js && node --check lib/firebase-admin.js && node --check lib/github-market-snapshot.js && node --check api/query-parse.js && node --check api/gemini-stock-insight.js && node --check api/account-sync.js && node --check api/market-data-refresh.js && node --check api/cron/market-data-refresh.js && node --check scripts/contract-check.mjs",
+    "check:query": "node --check api/query-parse.js",
+    "contract:check": "node scripts/contract-check.mjs"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.6.0"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}
